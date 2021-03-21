@@ -22,6 +22,14 @@ for i in [1,2]:
         k2PlusP5.addEdge((i,j))
 k2PlusP5.plotWith([1,2,3],"Q1-k2-plus-p5")
 
+print("k2+p5 is planar:" + str(c.isPlanar(k2PlusP5)))
+print("Tetrahedron is planar:" + str(c.isPlanar(platonic[4])))
+print("Dodecahedron is planar:" + str(c.isPlanar(platonic[20])))
+
+platonic[20].addEdge((1, 10))
+platonic[20].addEdge((2, 10))
+print("Dodecahedron+(1,10)+(2,10) is planar:" + str(c.isPlanar(platonic[20])))
+
 # random maximal planar graphs
 def randomMaximal(n): 
     allEdges = [] 
@@ -51,15 +59,15 @@ for i in range(20):
 
     f = open("../output/Q9-maximal-"+str(i+1)+".csv", "a")
     for j in range(6):
-        f.write(",".join([str(e) for e in edges[19*j:19*(j+1)]]))
+        f.write(",".join([str(x)+" "+str(y) 
+                          for (x,y) in edges[19*j:19*(j+1)]]))
         f.write("\n")
     f.write("\n" + str(n))
     f.close()
 
-    if i == 0:
-        (u,v) = edges[0]
-        for w in range(40):
-            if g.edge(u,w) in edges and g.edge(v,w) in edges:
-                graph.plotWith([u,v,w],"Q9-random-40")
-                print("Plotted. \n")
-                break
+    (u,v) = edges[0]
+    for w in range(40):
+        if g.edge(u,w) in edges and g.edge(v,w) in edges:
+            graph.plotWith([u,v,w],"Q9-random-40"+str(i+1))
+            print("Plotted. \n")
+            break
