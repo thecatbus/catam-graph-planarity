@@ -1,5 +1,6 @@
 import graphs as g
 import core as c 
+import bridges as b
 import random
 import sys
 
@@ -22,8 +23,13 @@ for i in [1,2]:
         k2PlusP5.addEdge((i,j))
 k2PlusP5.plotWith([1,2,3],"Q1-k2-plus-p5")
 
+# two standard non-planar graphs
+k33 = g.fromString("1 2\n1 4\n1 6\n3 2\n3 4\n3 6\n5 2\n5 4\n5 6") 
+k5 = g.fromString("1 2\n1 3\n1 4\n1 5\n2 3\n2 4\n2 5\n3 4\n3 5\n4 5")
+
 print("k2+p5 is planar:" + str(c.isPlanar(k2PlusP5)))
-print("Tetrahedron is planar:" + str(c.isPlanar(platonic[4])))
+print("k3,3 is planar:" + str(c.isPlanar(k33)))
+print("k5 is planar:" + str(c.isPlanar(k5)))
 print("Dodecahedron is planar:" + str(c.isPlanar(platonic[20])))
 
 platonic[20].addEdge((1, 10))
@@ -40,7 +46,7 @@ def randomMaximal(n):
     graph = g.Graph({})
     rejectionsAt = []
     for i in range(len(allEdges)):
-        sys.stdout.write("\rAdding edge number % i" % (i+1))
+        sys.stdout.write("\rTrying edge number % i" % (i+1))
         sys.stdout.flush()
         x = allEdges[i]
         graph.addEdge(x)
@@ -57,17 +63,29 @@ for i in range(20):
 
     edges = list(graph.eds())
 
-    f = open("../output/Q9-maximal-"+str(i+1)+".csv", "a")
-    for j in range(6):
-        f.write(",".join([str(x)+" "+str(y) 
-                          for (x,y) in edges[19*j:19*(j+1)]]))
+    # clear contents before proceeding
+    f = open("../output/Q9-maximal-"+str(i+1)+".txt", "w")
+    f.close()
+
+    # generate table
+    f = open("../output/Q9-maximal-"+str(i+1)+".txt", "a")
+    def monostr(x): 
+        if x < 10:
+            return " "+str(x)
+        else:
+            return str(x)
+    for j in range(19):
+        f.write("   ".join([monostr(x)+"-"+monostr(y) 
+                          for (x,y) in edges[6*j:6*(j+1)]]))
         f.write("\n")
-    f.write("\n" + str(n))
+    f.write("\nFirst exception encountered afer " + str(n) +" additions.")
     f.close()
 
     (u,v) = edges[0]
     for w in range(40):
-        if g.edge(u,w) in edges and g.edge(v,w) in edges:
+        if (g.edge(u,w) in edges 
+            and g.edge(v,w) in edges 
+            and len(b.bridges(graph, [u,v,w])) == 1):
             graph.plotWith([u,v,w],"Q9-random-40"+str(i+1))
             print("Plotted. \n")
             break
