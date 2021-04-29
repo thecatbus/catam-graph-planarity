@@ -35,21 +35,38 @@ def interleave(cycle, bridges):
         if len(xs) == 3 and xs == ys:
             return True
         else:
-            for i in range(0, len(cycle)):
-                for j in range(i+1, len(cycle)):
-                    for k in range(j+1, len(cycle)):
-                        for l in range(k+1, len(cycle)):
-                            if (cycle[i] in xs 
-                                and cycle[j] in ys
-                                and cycle[k] in xs
-                                and cycle[l] in ys):
-                                return True
-                            elif (cycle[i] in ys 
-                                and cycle[j] in xs
-                                and cycle[k] in ys
-                                and cycle[l] in xs):
-                                return True
-            return False
+            changes = 0
+            cur = ""
+            for i in cycle:
+                if cur == "":
+                    if i in xs:
+                        cur += 'x'
+                    if i in ys:
+                        cur += 'y'
+                elif cur == "x":
+                    if i in ys: 
+                        changes += 1
+                        cur = "" 
+                        if i in xs:
+                            cur += 'x'
+                        cur += 'y'
+                elif cur == "y": 
+                    if i in xs: 
+                        changes += 1
+                        cur = "" 
+                        cur += 'x'
+                        if i in ys:
+                            cur += 'y'
+                else: 
+                    if (i in xs) or (i in ys):
+                        changes += 1
+                        cur = "" 
+                        if i in xs: 
+                            cur += 'x'
+                        if i in ys:
+                            cur += 'y'
+            return (changes >= 3)
+
     # create graph
     adj = {}
     for i in range(len(bridges)):

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.12.14)  25 MAR 2021 19:02
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.12.14)  29 APR 2021 16:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -113,7 +113,18 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks28
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
@@ -136,9 +147,9 @@ Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count188
-\float@exts=\toks23
+\float@exts=\toks29
 \float@box=\box48
-\@float@everytoks=\toks24
+\@float@everytoks=\toks30
 \@floatcapt=\box49
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -157,46 +168,90 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 \Gin@req@width=\dimen157
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks25
-\verbatim@line=\toks26
+\every@verbatim=\toks31
+\verbatim@line=\toks32
 \verbatim@in@stream=\read2
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count189
+\lst@gtempboxa=\box50
+\lst@token=\toks33
+\lst@length=\count190
+\lst@currlwidth=\dimen158
+\lst@column=\count191
+\lst@pos=\count192
+\lst@lostspace=\dimen159
+\lst@width=\dimen160
+\lst@newlines=\count193
+\lst@lineno=\count194
+\lst@maxwidth=\dimen161
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count195
+\lst@skipnumbers=\count196
+\lst@framebox=\box51
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+Package cleveref Info: `listings' support loaded on input line 3131.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
 File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count189
-\l__pdf_internal_box=\box50
-\g__pdf_backend_object_int=\count190
-\g__pdf_backend_annotation_int=\count191
+\g__graphics_track_int=\count197
+\l__pdf_internal_box=\box52
+\g__pdf_backend_object_int=\count198
+\g__pdf_backend_annotation_int=\count199
 ) (./Graph-planarity.aux)
 \openout1 = `Graph-planarity.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 60.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+\c@lstlisting=\count266
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -214,7 +269,7 @@ File: ../output/Q1-k2-plus-p5.pdf Graphic file (type pdf)
 <use ../output/Q1-k2-plus-p5.pdf>
  [1
 
-] [2] [3] [4] [5]
+] [2] [3] [4] [5] [6]
 File: ../output/Q9-random-405.pdf Graphic file (type pdf)
 <use ../output/Q9-random-405.pdf>
 File: ../output/Q9-random-409.pdf Graphic file (type pdf)
@@ -223,44 +278,21 @@ File: ../output/Q9-random-4012.pdf Graphic file (type pdf)
 <use ../output/Q9-random-4012.pdf>
 File: ../output/Q9-random-4013.pdf Graphic file (type pdf)
 <use ../output/Q9-random-4013.pdf>
- [6]
-File: "../output/Q9-maximal-1.txt"  (verbatim)
-File: "../output/Q9-maximal-2.txt"  (verbatim)
  [7]
-File: "../output/Q9-maximal-3.txt"  (verbatim)
-File: "../output/Q9-maximal-4.txt"  (verbatim)
- [8]
 File: "../output/Q9-maximal-5.txt"  (verbatim)
-File: "../output/Q9-maximal-6.txt"  (verbatim)
- [9]
-File: "../output/Q9-maximal-7.txt"  (verbatim)
-File: "../output/Q9-maximal-8.txt"  (verbatim)
- [10]
+ [8]
 File: "../output/Q9-maximal-9.txt"  (verbatim)
-File: "../output/Q9-maximal-10.txt"  (verbatim)
-File: "../output/Q9-maximal-11.txt"  (verbatim)
- [11]
 File: "../output/Q9-maximal-12.txt"  (verbatim)
 File: "../output/Q9-maximal-13.txt"  (verbatim)
- [12]
-File: "../output/Q9-maximal-14.txt"  (verbatim)
-File: "../output/Q9-maximal-15.txt"  (verbatim)
- [13]
-File: "../output/Q9-maximal-16.txt"  (verbatim)
-File: "../output/Q9-maximal-17.txt"  (verbatim)
- [14]
-File: "../output/Q9-maximal-18.txt"  (verbatim)
-File: "../output/Q9-maximal-19.txt"  (verbatim)
- [15]
-File: "../output/Q9-maximal-20.txt"  (verbatim)
- [16] (./Graph-planarity.aux) ) 
+ [9] (../src/graphs.py [10] [11] [12])
+(../src/bridges.py [13]) (../src/core.py [14]) [15] (../src/main.py [16]) [17] (./Graph-planarity.aux) ) 
 Here is how much of TeX's memory you used:
- 4304 strings out of 479418
- 65329 string characters out of 5884584
- 324023 words of memory out of 5000000
- 21742 multiletter control sequences out of 15000+600000
+ 7932 strings out of 479418
+ 128726 string characters out of 5884584
+ 613376 words of memory out of 5000000
+ 25342 multiletter control sequences out of 15000+600000
  540342 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 41i,14n,42p,1204b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,47p,1204b,1882s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Graph-planarity.xdv (16 pages, 245472 bytes).
+Output written on Graph-planarity.xdv (17 pages, 449660 bytes).

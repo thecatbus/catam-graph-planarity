@@ -5,11 +5,42 @@
 \usepackage[parfill]{parskip}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{verbatim}
+\usepackage{listings}
+\usepackage{cleveref}
+
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    language=Python,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegray},
+    keywordstyle=\color{codegreen},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \makeatletter
 \newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
@@ -24,12 +55,15 @@
 
 \newcommand{\starreditem}{\item[\refstepcounter{enumi}\number\value{enumi}*.]}
 
+\newtheorem*{prop}{Proposition}
+
 \begin{document}
 \setcounter{section}{16}
 \section{Combinatorics}
 \setcounter{subsection}{6}
 \subsection{Graph planarity}
-\emph{CATAM coursework for Part II of the Mathematical Tripos.}
+\emph{CATAM coursework for Part II of the Mathematical Tripos. Sections have
+been numbered as they appear in the manual.}
 
 \subsubsection{Graph drawing}
 \textbf{Question 1}\quad 
@@ -239,80 +273,140 @@ Starting with the empty graph on \(n\) vertices and adding each of the
 \(\binom{n}{2}\) edges in random order as long as planarity is preserved, the
 graph we end up with is indeed maximal planar, hence has \(3n-6\) edges. 
 
-Note that a maximal planar graph \(G\) on more than \(3\) vertices can be plotted using Tutte's theorem-- choose a planar representation of \(G\) and let \(C\) be the \(3\)-cycle
-bounding a face. \(C\) has at least one bridge, and all the bridges lie in the
-(topological) complement of the face bounded by \(C\). If there were multiple
-such bridges, we could add edges connecting their bodies while preserving the
-planarity of \(G\); this contradicts the maximality of \(G\). Hence the boundary
-of a face in \(G\) has exactly one bridge.
+\begin{prop}
+    Suppose \(G\) is a maximal planar graph on \(n\geq 4\) vertices. Then \(G\)
+    is 3-connected and contains a cycle with exactly one bridge.
+    \begin{proof}
+        Let \(G\) be a maximal planar graph on \(n\geq 4\) vertices. Pick a
+        planar representation of \(G\). Call an edge \(e\) \emph{contractible}
+        if the only triangles containing \(e\) are faces (i.e.\ its end points
+        have at most two common neighbours). Write \(G/e\) for
+        the graph formed by contracting the edge \(e\), i.e.\ identifying its
+        end points. This is still planar by Wagner's criterion since contracting
+        an edge cannot create new minors.  Moreover, we lose exactly \(3\) edges
+        in the contraction hence \(G/e\) contains \(n-1\) vertices and \(3n -
+        9\) edges. It follows that \(G/e\) is maximal planar.
 
-The appendix contains edge lists for twenty such randomly generated maximal
+        We show by induction that \(G\) contains at least \(n\) contractible
+        edges: clear if \(n=4\). If \(n>4\), take a planar representation of
+        \(G\) and choose a triangle in \(G\) that is not a face. The subgraphs
+        \(G_1\) and \(G_2\) contained (topologically) inside and outside the
+        triangle are both maximal planar and together have \(|G_1|+|G_2| =
+        n+3\) vertices, giving \(n+3\) possible candidates for contractible
+        edges. Then in \(G\), all of these continue to remain contractible
+        except for (possibly) the edges of the triangle, which can lose the
+        property. Hence \(G\) contains at least \(n\) contractible edges.  
+
+        Now suppose there are maximal planar graphs on \(4\) or more vertices
+        which are not \(3\)-connected. Choose \(G\) to be such a graph with the
+        minimal number of vertices, then there are \(u,v\in V(G)\) such that
+        \(G-\{u,v\}\) is disconnected. Let the components be \(G_1\) and
+        \(G_2\). From the above discussion, we can pick an edge \(e\)
+        which is contractible, then without loss of generality this edge must
+        lie in \(G_1\). We observe that \(G/e\) is maximal planar with \(n-1\)
+        vertices, and removing (the possibly modified versions of) \(\{u,v\}\)
+        still disconnects \(G/e\). But \(G\) was chosen to be minimal, a
+        contradiction. Hence every maximal planar graph on \(4\) or more
+        vertices is \(3\)-connected.
+
+        Choose a planar representation of \(G\) and let \(C\) be the \(3\)-cycle
+        bounding a face. \(C\) has at least one bridge, and all the bridges lie
+        in the (topological) complement of the face bounded by \(C\). If there
+        were multiple such bridges, we could add edges connecting their bodies
+        while preserving the planarity of \(G\); this contradicts the maximality
+        of \(G\). Hence the boundary of a face in \(G\) has exactly one bridge.
+    \end{proof}
+\end{prop}
+
+We generate twenty random maximal
 planar graphs on \(40\) vertices. Now any edge \(x-y\) of such a graph bounds some face,
 hence is a part of some \(3\)-cycle with exactly one bridge. We can iterate over
 all the other vertices \(z\in V[G]\setminus \{x,y\}\) till we find such a cycle
-\(xyz\), which we use as the outermost face in our plot. Using this, we exhibit
-the plots for a selection of the graphs generated.\footnote{All were plotted,
-the ones shown here are the plots which were the least skewed.}
+\(xyz\), which we use as the outermost face in our plot. The proposition then
+guarantees that Tutte's plotting algorithm works, so we use it to exhibit
+planar representations of a selection of the graphs generated in
+\cref{randomplots}. Appendix A contains edge-lists for the graphs shown.
+
   \begin{figure}[H]
       \centering 
       \begin{subfigure}[b]{0.45\textwidth}
           \centering 
           \includegraphics[width = \textwidth]{../output/Q9-random-405.pdf}
-          \caption{Graph number 5}
+          \caption{Graph number 1}
       \end{subfigure}
       \hfill
       \begin{subfigure}[b]{0.45\textwidth}
           \centering 
           \includegraphics[width = \textwidth]{../output/Q9-random-409.pdf}
-          \caption{Graph number 9}
+          \caption{Graph number 2}
       \end{subfigure}
       \hfill
       \begin{subfigure}[b]{0.45\textwidth}
           \centering 
           \includegraphics[width = \textwidth]{../output/Q9-random-4012.pdf}
-          \caption{Graph number 12}
+          \caption{Graph number 3}
       \end{subfigure}
       \hfill
       \begin{subfigure}[b]{0.45\textwidth}
           \centering 
           \includegraphics[width = \textwidth]{../output/Q9-random-4013.pdf}
-          \caption{Graph number 13}
+          \caption{Graph number 4}
       \end{subfigure}
       \hfill
       \caption{Four of the randomly generated maximal planar graphs.}
+      \label{randomplots}
   \end{figure}
 
+\textbf{Question 10}\quad 
+Suppose we want to check if a graph \(G\) with \(n\) edges is planar. Then it
+contains at most \(O(n)\) vertices. To find the core of \(G\), we iterate over
+all the vertices and remove the ones of degree \(\leq 3\). Since computing the
+degree of any vertex (i.e.\ the length of the list containing its neighbourhood)
+takes constant time, finding the core has complexity \(O(n)\). In the worst
+case, \(G\) is its own core. Now we simply start with a vertex and extend the
+path one step at a time till it closes into a cycle \(C\) with a chord, this
+taking another \(O(n)\) steps. To find the component of a particular vertex in
+\(G-C\), we pick a vertex and keep adding neighbours of vertices found so far.
+This takes \(O(n^2)\) steps, and we do this for \(O(n)\) vertices in the worst
+case hence finding the bridges has complexity \(O(n^3)\). 
+
+In the worst case, the cycle we find has length \(O(n)\) and there are \(O(n)\)
+components. Then checking if each pair of components interleaves takes
+\(O(n)\) steps (traversing once through the cycle, keeping track of possible
+interleaves seen so far), hence the interleaf graph takes \(O(n^3)\) steps to construct and has size \(O(n)\). Checking if the interleave graph is bipartite then has complexity \(O(n^2)\).
+
+Hence a single iteration of the algorithm has complexity \(O(n^3)\). Each
+iteration, we remove (in the worst case) one edge from \(G\) hence the entire
+algorithm takes \(O(n^4)\) steps to check for planarity.
 
 \subsubsection*{Appendix A. \quad Random maximal planar graphs}
-We present the output produced after running the algorithm twenty times to
+We present the output produced after running the algorithm to
 randomly generate maximal planar graphs on \(40\) vertices (labelled
 \(\texttt{0}\) to \(\texttt{39}\)). One evidence that the algorithm works
 properly is to observe that each graph has \(114 = 3\times 40 - 6\) edges,
 arranged in a \(6\times 19\) grid. Each grid should be read row-by-row, left to
-right and top to bottom. The planar representations of graphs marked \(\ast\)
-have been exhibited when answering Question 9. The mean number of edges added
-before the first violation of planarity is 42.55.
+right and top to bottom. Across twenty such graphs, the mean number of edges
+added before the first violation of planarity is 42.55.
 \verbatimfont{\footnotesize\ttfamily}
 \begin{enumerate}[1.]
-    \item \verbatiminput{../output/Q9-maximal-1.txt} 
-    \item \verbatiminput{../output/Q9-maximal-2.txt} 
-    \item \verbatiminput{../output/Q9-maximal-3.txt} 
-    \item \verbatiminput{../output/Q9-maximal-4.txt} 
-    \starreditem \verbatiminput{../output/Q9-maximal-5.txt} 
-    \item \verbatiminput{../output/Q9-maximal-6.txt} 
-    \item \verbatiminput{../output/Q9-maximal-7.txt} 
-    \item \verbatiminput{../output/Q9-maximal-8.txt} 
-    \starreditem \verbatiminput{../output/Q9-maximal-9.txt} 
-    \item \verbatiminput{../output/Q9-maximal-10.txt} 
-    \item \verbatiminput{../output/Q9-maximal-11.txt} 
-    \starreditem \verbatiminput{../output/Q9-maximal-12.txt} 
-    \starreditem \verbatiminput{../output/Q9-maximal-13.txt} 
-    \item \verbatiminput{../output/Q9-maximal-14.txt} 
-    \item \verbatiminput{../output/Q9-maximal-15.txt} 
-    \item \verbatiminput{../output/Q9-maximal-16.txt} 
-    \item \verbatiminput{../output/Q9-maximal-17.txt} 
-    \item \verbatiminput{../output/Q9-maximal-18.txt} 
-    \item \verbatiminput{../output/Q9-maximal-19.txt} 
-    \item \verbatiminput{../output/Q9-maximal-20.txt} 
+    \item \verbatiminput{../output/Q9-maximal-5.txt} 
+    \item \verbatiminput{../output/Q9-maximal-9.txt} 
+    \item \verbatiminput{../output/Q9-maximal-12.txt} 
+    \item \verbatiminput{../output/Q9-maximal-13.txt} 
 \end{enumerate}
+
+\subsubsection*{Appendix B: Programs}
+
+\underline{\texttt{graphs.py}}
+\lstinputlisting{../src/graphs.py}
+
+\underline{\texttt{bridges.py}}
+\lstinputlisting{../src/bridges.py}
+
+\underline{\texttt{core.py}}
+\lstinputlisting{../src/core.py}
+
+\underline{\texttt{main.py}}
+\lstinputlisting{../src/main.py}
+
 \end{document}
