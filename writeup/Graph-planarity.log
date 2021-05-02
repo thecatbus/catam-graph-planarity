@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.12.14)  29 APR 2021 16:37
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.12.14)  2 MAY 2021 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -283,16 +283,17 @@ File: "../output/Q9-maximal-5.txt"  (verbatim)
  [8]
 File: "../output/Q9-maximal-9.txt"  (verbatim)
 File: "../output/Q9-maximal-12.txt"  (verbatim)
+ [9]
 File: "../output/Q9-maximal-13.txt"  (verbatim)
- [9] (../src/graphs.py [10] [11] [12])
+ (../src/graphs.py [10] [11] [12])
 (../src/bridges.py [13]) (../src/core.py [14]) [15] (../src/main.py [16]) [17] (./Graph-planarity.aux) ) 
 Here is how much of TeX's memory you used:
  7932 strings out of 479418
  128726 string characters out of 5884584
- 613376 words of memory out of 5000000
+ 615376 words of memory out of 5000000
  25342 multiletter control sequences out of 15000+600000
  540342 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 41i,14n,47p,1204b,1882s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,47p,1204b,1876s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Graph-planarity.xdv (17 pages, 449660 bytes).
+Output written on Graph-planarity.xdv (17 pages, 449912 bytes).

@@ -301,9 +301,12 @@ graph we end up with is indeed maximal planar, hence has \(3n-6\) edges.
         which are not \(3\)-connected. Choose \(G\) to be such a graph with the
         minimal number of vertices, then there are \(u,v\in V(G)\) such that
         \(G-\{u,v\}\) is disconnected. Let the components be \(G_1\) and
-        \(G_2\). From the above discussion, we can pick an edge \(e\)
+        \(G_2\). Note that \(G\) has \(>4\) vertices since the only maximal
+        planar graph on \(4\) vertices is \(K_4\). From the above discussion, we
+        can pick an \(e\in E(G)\)
         which is contractible, then without loss of generality this edge must
-        lie in \(G_1\). We observe that \(G/e\) is maximal planar with \(n-1\)
+        lie in \(G_1\). We observe that \(G/e\) is maximal planar with \(n-1\geq
+        4\)
         vertices, and removing (the possibly modified versions of) \(\{u,v\}\)
         still disconnects \(G/e\). But \(G\) was chosen to be minimal, a
         contradiction. Hence every maximal planar graph on \(4\) or more

@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1619710653 "Graph-planarity.xdv" "Graph-planarity.pdf" "Graph-planarity" 1619710654
-  "Graph-planarity.xdv" 1619710653 449660 5fa623d487abc5c0e9aa3ade9f2161ed "xelatex"
+["xdvipdfmx"] 1619954749 "Graph-planarity.xdv" "Graph-planarity.pdf" "Graph-planarity" 1619954750
+  "Graph-planarity.xdv" 1619954749 449912 32263800c109d97dcd868509ecb33915 "xelatex"
   (generated)
   "Graph-planarity.pdf"
-["xelatex"] 1619710652 "Graph-planarity.tex" "Graph-planarity.xdv" "Graph-planarity" 1619710654
+["xelatex"] 1619954748 "Graph-planarity.tex" "Graph-planarity.xdv" "Graph-planarity" 1619954750
   "../output/Q1-k2-plus-p5.pdf" 1616673793 1824 a135f99a3101c9a55ec1e09976fa0608 ""
   "../output/Q1-platonic-12.pdf" 1616673792 2181 db7b88ecfbac761baf1ed29eb628221e ""
   "../output/Q1-platonic-20.pdf" 1616673792 1951 e3f14e2a58ee67f70b93367a6b2f0387 ""
@@ -85,9 +85,9 @@
   "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1583102494 39451 60d7debd9ef8ece44cbe965493576c2d ""
   "/usr/local/texlive/2020/texmf-var/web2c/xetex/xelatex.fmt" 1607936150 4769637 39a17f0fc98a64aa8c8915a97eb01eb7 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "Graph-planarity.aux" 1619710653 1616 a67acfcabe9d7532d202c574dbf30658 "xelatex"
-  "Graph-planarity.tex" 1619710651 21150 569109194ef94c912722a5b693057605 ""
+  "Graph-planarity.aux" 1619954749 1616 a67acfcabe9d7532d202c574dbf30658 "xelatex"
+  "Graph-planarity.tex" 1619954746 21285 fa84e4bd1b0bfb998d47a4e0353b6ec9 ""
   (generated)
+  "Graph-planarity.xdv"
   "Graph-planarity.aux"
   "Graph-planarity.log"
-  "Graph-planarity.xdv"
